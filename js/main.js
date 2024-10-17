@@ -12,7 +12,7 @@ const render = (data) => {
 };
 
 const getData = () => {
-  fetch("http://localhost:3600/todos")
+  fetch("http://jsonplaceholder.typicode.com/users")
     .then((res) => {
       return res.json("");
     })
