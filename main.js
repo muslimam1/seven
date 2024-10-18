@@ -1,18 +1,18 @@
-const box = document.querySelector(".content");
-const form = document.querySelector(".block");
-const title_input = document.querySelector(".name__input");
-const description_input = document.querySelector(".desc__input");
+const box = document.querySelector(".box");
+const form = document.querySelector(".form");
+const title_input = document.querySelector(".title_input");
+const description_input = document.querySelector(".description_input");
 
 const render = (data) => {
   box.innerHTML = data.map((item) => {
-    return `<h1>${item.name}</h1>
-      <h2>${item.desc}</h2>
+    return `<h1>${item.title}</h1>
+      <h2>${item.description}</h2>
     `;
   });
 };
 
 const getData = () => {
-  fetch("http://jsonplaceholder.typicode.com/users")
+  fetch("http://localhost:3600/todos")
     .then((res) => {
       return res.json("");
     })
@@ -26,8 +26,8 @@ getData();
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const obj = {};
-  obj.title = name__input.value;
-  obj.description = desc__input.value;
+  obj.title = title_input.value;
+  obj.description = description_input.value;
   console.log(obj);
 
   fetch("http://localhost:3600/todos", {
