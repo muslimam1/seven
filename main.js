@@ -12,7 +12,7 @@ const render = (data) => {
 };
 
 const getData = () => {
-  fetch("http://localhost:3600/todos")
+  fetch("https://jsonplaceholder.typicode.com/posts")
     .then((res) => {
       return res.json("");
     })
@@ -30,7 +30,7 @@ form.addEventListener("submit", (e) => {
   obj.description = description_input.value;
   console.log(obj);
 
-  fetch("http://localhost:3600/todos", {
+  fetch("https://jsonplaceholder.typicode.com/posts", {
     headers: {
       "Content-Type": "application/json",
     },
